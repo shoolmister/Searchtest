@@ -1,227 +1,169 @@
-[
+{
+  "Sheet1": [
     {
-        "SKU": "3EH03550AA",
-        "Description": "1 Universal Telephony License additional for exi",
-        "ETA": "11/2/2020",
-        "ATA": "11/2/2020",
-        "Document#": "GR20007923",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3EH03550AA",
+      "Description": "1 Universal Telephony License additional for exi",
+      "ETA": "11/2/20",
+      "ATA": "11/2/20",
+      "Document#": "GR20007923"
     },
     {
-        "SKU": "3EY98998AA",
-        "Description": "OXO Connect software assurance for 3 years",
-        "ETA": "11/2/2025",
-        "ATA": "11/2/2020",
-        "Document#": "GR20007923",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3EY98998AA",
+      "Description": "OXO Connect software assurance for 3 years",
+      "ETA": "11/2/25",
+      "ATA": "11/2/20",
+      "Document#": "GR20007923"
     },
     {
-        "SKU": "3EY98998AA",
-        "Description": "OXO Connect software assurance for 3 years",
-        "ETA": "2/20/2024",
-        "ATA": null,
-        "Document#": "GR20007924",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3EY98998AA",
+      "Description": "OXO Connect software assurance for 3 years",
+      "ETA": "2/20/24",
+      "Document#": "GR20007924"
     },
     {
-        "SKU": "3EH75007AA",
-        "Description": "MR1 MOUNTING KIT",
-        "ETA": "1/12/2022",
-        "ATA": "1/12/2022",
-        "Document#": "GR22000420",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3EH75007AA",
+      "Description": "MR1 MOUNTING KIT",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
     },
     {
-        "SKU": "3MG27201AB",
-        "Description": "8018 MOON GREY DESKPHONE W/O RJ45 CABLE",
-        "ETA": "1/12/2022",
-        "ATA": "1/12/2022",
-        "Document#": "GR22000420",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3MG27201AB",
+      "Description": "8018 MOON GREY DESKPHONE W/O RJ45 CABLE",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
     },
     {
-        "SKU": "3MG27106AC",
-        "Description": "PREMIUM ADD-ON MODULE S - 40 KEYS",
-        "ETA": "1/12/2022",
-        "ATA": "1/12/2022",
-        "Document#": "GR22000420",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3MG27106AC",
+      "Description": "PREMIUM ADD-ON MODULE S - 40 KEYS",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
     },
     {
-        "SKU": "3MG27201AB",
-        "Description": "8018 MOON GREY DESKPHONE W/O RJ45 CABLE",
-        "ETA": "1/12/2022",
-        "ATA": "1/12/2022",
-        "Document#": "GR22000420",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3MG27201AB",
+      "Description": "8018 MOON GREY DESKPHONE W/O RJ45 CABLE",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
     },
     {
-        "SKU": "3EH02146AA",
-        "Description": "OXO CONNECT SMALL R4",
-        "ETA": "1/12/2022",
-        "ATA": "1/12/2022",
-        "Document#": "GR22000420",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3EH02146AA",
+      "Description": "OXO CONNECT SMALL R4",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
     },
     {
-        "SKU": "OS6865-BP-D",
-        "Description": "OS6865 180W DC PSU",
-        "ETA": "3/20/2022",
-        "ATA": "3/20/2022",
-        "Document#": "GR22002081",
-        "Order#": null,
-        "Amount": null
+      "SKU": "OS6865-BP-D",
+      "Description": "OS6865 180W DC PSU",
+      "ETA": "3/20/22",
+      "ATA": "3/20/22",
+      "Document#": "GR22002081"
     },
     {
-        "SKU": "OS6360-P10-IS",
-        "Description": "Value 10p PoE Gig - IS cord",
-        "ETA": "4/27/2022",
-        "ATA": "4/27/2022",
-        "Document#": "GR22003025",
-        "Order#": null,
-        "Amount": null
+      "SKU": "OS6360-P10-IS",
+      "Description": "Value 10p PoE Gig - IS cord",
+      "ETA": "4/27/22",
+      "ATA": "4/27/22",
+      "Document#": "GR22003025"
     },
     {
-        "SKU": "PP3N-OS6900",
-        "Description": "3YR Partner SUPPORT Plus for all OS6900 models",
-        "ETA": "6/19/2022",
-        "ATA": "6/19/2022",
-        "Document#": "GR22004169",
-        "Order#": null,
-        "Amount": null
+      "SKU": "PP3N-OS6900",
+      "Description": "3YR Partner SUPPORT Plus for all OS6900 models",
+      "ETA": "6/19/22",
+      "ATA": "6/19/22",
+      "Document#": "GR22004169"
     },
     {
-        "SKU": "PW3N-OS6450-10",
-        "Description": "3YR PARTNER SUPPORT SW OS6450-10",
-        "ETA": "8/30/2022",
-        "ATA": "8/30/2022",
-        "Document#": "GR22004167",
-        "Order#": null,
-        "Amount": null
+      "SKU": "PW3N-OS6450-10",
+      "Description": "3YR PARTNER SUPPORT SW OS6450-10",
+      "ETA": "8/30/22",
+      "ATA": "8/30/22",
+      "Document#": "GR22004167"
     },
     {
-        "SKU": "3EH73092AB",
-        "Description": "ANALOG INTERFACES SLI16-2 BOARD",
-        "ETA": "9/13/2022",
-        "ATA": "9/13/2022",
-        "Document#": "GR22006349",
-        "Order#": null,
-        "Amount": null
+      "SKU": "3EH73092AB",
+      "Description": "ANALOG INTERFACES SLI16-2 BOARD",
+      "ETA": "9/13/22",
+      "ATA": "9/13/22",
+      "Document#": "GR22006349"
     },
     {
-        "SKU": "LT-RD33-14883",
-        "Description": "Latitude 5440/i5-1335U/16GB/512GB/FHD/W11P/3Y NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": "GR24001488",
-        "Order#": "1001920721",
-        "Amount": 10
+      "SKU": "LT-RD33-14883",
+      "Description": "Latitude 5440/i5-1335U/16GB/512GB/FHD/W11P/3Y NBD",
+      "Document#": "GR24001488",
+      "Order#": "1001920721",
+      "Amount": "10"
     },
     {
-        "SKU": "LT-RD33-14884",
-        "Description": "Latitude 5440/i7-1355U/16GB/512GB/FHD/W11P/3Y NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": "GR24001488",
-        "Order#": "1001920721",
-        "Amount": 5
+      "SKU": "LT-RD33-14884",
+      "Description": "Latitude 5440/i7-1355U/16GB/512GB/FHD/W11P/3Y NBD",
+      "Document#": "GR24001488",
+      "Order#": "1001920721",
+      "Amount": "5"
     },
     {
-        "SKU": "LT-RD33-14887",
-        "Description": "Latitude 5440/i7-1335U/64GB/1TB/FHD/W11P/3Y NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": "GR24001488",
-        "Order#": "1001920721",
-        "Amount": 2
+      "SKU": "LT-RD33-14887",
+      "Description": "Latitude 5440/i7-1335U/64GB/1TB/FHD/W11P/3Y NBD",
+      "Document#": "GR24001488",
+      "Order#": "1001920721",
+      "Amount": "2"
     },
     {
-        "SKU": "AL-RD09-14243",
-        "Description": "Alienware 34 QD-OLED Gaming Monitor - AW3423DWF",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001986201",
-        "Amount": 50
+      "SKU": "AL-RD09-14243",
+      "Description": "Alienware 34 QD-OLED Gaming Monitor - AW3423DWF",
+      "Order#": "1001986201",
+      "Amount": "50"
     },
     {
-        "SKU": "OP-RD09-12812",
-        "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985209",
-        "Amount": 100
+      "SKU": "OP-RD09-12812",
+      "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
+      "Order#": "1001985209",
+      "Amount": "100"
     },
     {
-        "SKU": "OP-RD09-12812",
-        "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985211",
-        "Amount": 100
+      "SKU": "OP-RD09-12812",
+      "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
+      "Order#": "1001985211",
+      "Amount": "100"
     },
     {
-        "SKU": "OP-RD09-12812",
-        "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985208",
-        "Amount": 100
+      "SKU": "OP-RD09-12812",
+      "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
+      "Order#": "1001985208",
+      "Amount": "100"
     },
     {
-        "SKU": "OP-RD09-12812",
-        "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985210",
-        "Amount": 100
+      "SKU": "OP-RD09-12812",
+      "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
+      "Order#": "1001985210",
+      "Amount": "100"
     },
     {
-        "SKU": "OP-RD09-12812",
-        "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985207",
-        "Amount": 100
+      "SKU": "OP-RD09-12812",
+      "Description": "Dell 24 Monitor -  SE2422H- 60.5cm (23.8’’), 3Yr NBD",
+      "Order#": "1001985207",
+      "Amount": "100"
     },
     {
-        "SKU": "OP-RD09-12814",
-        "Description": "Dell 27 Monitor -  SE2722H- 68.5cm (27), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985529",
-        "Amount": 100
+      "SKU": "OP-RD09-12814",
+      "Description": "Dell 27 Monitor -  SE2722H- 68.5cm (27), 3Yr NBD",
+      "Order#": "1001985529",
+      "Amount": "100"
     },
     {
-        "SKU": "OP-RD09-12814",
-        "Description": "Dell 27 Monitor -  SE2722H- 68.5cm (27), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985527",
-        "Amount": 100
+      "SKU": "OP-RD09-12814",
+      "Description": "Dell 27 Monitor -  SE2722H- 68.5cm (27), 3Yr NBD",
+      "Order#": "1001985527",
+      "Amount": "100"
     },
     {
-        "SKU": "OP-RD09-12814",
-        "Description": "Dell 27 Monitor -  SE2722H- 68.5cm (27), 3Yr NBD",
-        "ETA": null,
-        "ATA": null,
-        "Document#": null,
-        "Order#": "1001985530",
-        "Amount": 100
+      "SKU": "OP-RD09-12814",
+      "Description": "Dell 27 Monitor -  SE2722H- 68.5cm (27), 3Yr NBD",
+      "Order#": "1001985530",
+      "Amount": "100"
     }
-]
+  ]
+}
