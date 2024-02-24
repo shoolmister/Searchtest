@@ -2,12 +2,16 @@
 function searchProduct() {
   const skuInput = document.getElementById("skuInput").value.toUpperCase();
 
-  // Fetch the data from the database.json file
-  fetch('./database.json')
-    .then(response => response.json())
-    .then(jsonData => {
-      // Extract the array from the parsed JSON
-      const excelData = jsonData.Sheet1;
+  // Fetch data from database.json
+  fetch("database.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      const excelData = data.Sheet1;
 
       // Check if SKU and skuInput are defined
       if (!skuInput || typeof skuInput !== 'string') {
@@ -19,6 +23,18 @@ function searchProduct() {
       const matchingResults = excelData.filter(row => {
         const rowSKU = row.SKU && typeof row.SKU === 'string' ? row.SKU.replace(/\//g, '') : '';
         return rowSKU === skuInput.replace(/\//g, '');
+      });
+
+      // Sort results by the closest ETA
+      matchingResults.sort((a, b) => {
+        const aETA = new Date(a.ETA);
+        const bETA = new Date(b.ETA);
+        const currentDate = new Date();
+
+        const diffA = Math.abs(aETA - currentDate);
+        const diffB = Math.abs(bETA - currentDate);
+
+        return diffA - diffB;
       });
 
       // Display the results
