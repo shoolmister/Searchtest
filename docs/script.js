@@ -39,10 +39,17 @@ function searchProduct() {
 }
 
 function getDatabase() {
-  // Replace this with your actual logic to fetch the database
-  // For now, let's assume you have a variable named 'database' that holds your JSON data
-  const database = /* your JSON data */;
-  return database;
+  // Assuming your JSON file is in the same directory as your HTML and script.js
+  const jsonFilePath = 'database.json';
+
+  // Using fetch to get the JSON data
+  return fetch(jsonFilePath)
+    .then(response => response.json())
+    .then(data => data.Sheet1)
+    .catch(error => {
+      console.error('Error fetching JSON:', error);
+      return null;
+    });
 }
 
 function displayShipmentProgress(eta) {
