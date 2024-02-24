@@ -26,26 +26,24 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  function displayResults(results) {
-    resultContainer.innerHTML = "";
+function displayResults(results) {
+  const resultContainer = document.getElementById("resultContainer");
+  resultContainer.innerHTML = ""; // Clear previous results
 
-    if (results.length === 0) {
-      resultContainer.innerHTML = "<p>No results found.</p>";
-    } else {
-      results.forEach(result => {
-        const documentLink = `https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${result["Document#"]}:cms:tabula.ini:1`;
-
-        const resultItem = document.createElement("div");
-        resultItem.innerHTML = `
-          <p>SKU: ${result.SKU}</p>
-          <p>Description: ${result.Description}</p>
-          <p>ETA: ${result.ETA}</p>
-          <p>Order#: ${result.Order ? result.Order : "N/A"}</p>
-          <p>Amount: ${result.Amount ? result.Amount : "N/A"}</p>
-          <p>Document#: <a href="${documentLink}" target="_blank">${result["Document#"]}</a></p>
-        `;
-        resultContainer.appendChild(resultItem);
-      });
-    }
+  if (results.length === 0) {
+    resultContainer.innerHTML = "<p>No results found.</p>";
+  } else {
+    results.forEach(result => {
+      const resultItem = document.createElement("div");
+      resultItem.innerHTML = `
+        <p>SKU: ${result.SKU}</p>
+        <p>Description: ${result.Description}</p>
+        <p>ETA: ${result.ETA || "N/A"}</p>
+        <p>Order#: ${result.Order !== undefined ? result.Order : "N/A"}</p>
+        <p>Amount: ${result.Amount !== undefined ? result.Amount : "N/A"}</p>
+        <p>Document#: <a href="https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${result["Document#"]}:cms:tabula.ini:1">${result["Document#"]}</a></p>
+      `;
+      resultContainer.appendChild(resultItem);
+    });
   }
-});
+}
