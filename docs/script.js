@@ -33,14 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
       resultContainer.innerHTML = "<p>No results found.</p>";
     } else {
       results.forEach(result => {
+        const documentLink = `https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${result["Document#"]}:cms:tabula.ini:1`;
+
         const resultItem = document.createElement("div");
         resultItem.innerHTML = `
           <p>SKU: ${result.SKU}</p>
           <p>Description: ${result.Description}</p>
           <p>ETA: ${result.ETA}</p>
-          <p>Order#: ${result.Order || "N/A"}</p>
-          <p>Amount: ${result.Amount || "N/A"}</p>
-          <p>Document#: <a href="https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${result["Document#"]}:cms:tabula.ini:1">${result["Document#"]}</a></p>
+          <p>Order#: ${result.Order ? result.Order : "N/A"}</p>
+          <p>Amount: ${result.Amount ? result.Amount : "N/A"}</p>
+          <p>Document#: <a href="${documentLink}" target="_blank">${result["Document#"]}</a></p>
         `;
         resultContainer.appendChild(resultItem);
       });
