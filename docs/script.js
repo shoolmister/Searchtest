@@ -59,8 +59,7 @@ function displayResults(results) {
       resultItem.innerHTML = `<p>SKU: ${result.SKU}</p>
                               <p>Description: ${result.Description}</p>
                               <p>ETA: ${result.ETA}</p>
-                              <p>Document#: ${result["Document#"]}</p>
-                              <a href="${documentLink}" target="_blank">Open Document</a>`;
+                              <p>Document#: <a href="${documentLink}" target="_blank">${result["Document#"]}</a></p>`;
       resultContainer.appendChild(resultItem);
     });
   }
