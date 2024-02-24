@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function searchProduct() {
         const searchTerm = searchInput.value.toUpperCase();
 
-        fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/database.json")
+        fetch("docs/database.json")
             .then(response => response.json())
             .then(data => {
                 const products = data.Sheet1;
