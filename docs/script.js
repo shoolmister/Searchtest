@@ -40,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <p>ETA: ${result.ETA}</p>
           <p>Order#: ${result.Order || "N/A"}</p>
           <p>Amount: ${result.Amount || "N/A"}</p>
-          <p>Document#: ${result["Document#"]}</p>
-          <a href="https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${result["Document#"]}:cms:tabula.ini:1">${result["Document#"]}</a>
+          <p>Document#: <a href="https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${result["Document#"]}:cms:tabula.ini:1">${result["Document#"]}</a></p>
         `;
         resultContainer.appendChild(resultItem);
       });
