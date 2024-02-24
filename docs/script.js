@@ -55,10 +55,12 @@ function displayResults(results) {
   } else {
     results.forEach(result => {
       const resultItem = document.createElement("div");
+      const documentLink = `https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${result["Document#"]}:cms:tabula.ini:1`;
       resultItem.innerHTML = `<p>SKU: ${result.SKU}</p>
                               <p>Description: ${result.Description}</p>
                               <p>ETA: ${result.ETA}</p>
-                              <p>Document#: ${result["Document#"]}</p>`;
+                              <p>Document#: ${result["Document#"]}</p>
+                              <a href="${documentLink}" target="_blank">Open Document</a>`;
       resultContainer.appendChild(resultItem);
     });
   }
