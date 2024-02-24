@@ -1,81 +1,46 @@
-// Declare excelData variable
-let excelData;
-
-// Function to fetch data from database.json
-function fetchData() {
-  fetch('data/database.json')
-    .then(response => response.json())
-    .then(data => {
-      excelData = data;
-    })
-    .catch(error => console.error('Error fetching data:', error));
-}
-
-// Call fetchData function to fetch data when the script is loaded
-fetchData();
-
-// Function to search product using fetched data
+// Function to search for a product by SKU
 function searchProduct() {
-  const skuInput = document.getElementById("skuInput").value;
-  const resultsContainer = document.getElementById("results");
+  const skuInput = document.getElementById("skuInput").value.toUpperCase();
 
-  // Clear previous results
-  resultsContainer.innerHTML = "";
+  // Parse the JSON data
+  const jsonData = {
+    "Sheet1": [
+      {
+        "SKU": "3EH03550AA",
+        "Description": "1 Universal Telephony License additional for exi",
+        "ETA": "11/2/20",
+        "ATA": "11/2/20",
+        "Document#": "GR20007923"
+      },
+      // ... (rest of your JSON data)
+    ]
+  };
 
-  // Check if data is fetched before searching
-  if (!excelData) {
-    resultsContainer.innerHTML = "<p>Error fetching data. Please try again.</p>";
-    return;
-  }
+  // Extract the array from the parsed JSON
+  const excelData = jsonData.Sheet1;
 
-  // Search the fetched data
-  const matchingResults = excelData.filter(row => row[0].replace(/\//g, '') === skuInput.replace(/\//g, ''));
-
-  // Sort results based on ETA proximity to current date
-  matchingResults.sort((a, b) => {
-    const etaDateA = new Date(a[2]);
-    const etaDateB = new Date(b[2]);
-    const now = new Date();
-
-    const timeDifferenceA = Math.abs(etaDateA.getTime() - now.getTime());
-    const timeDifferenceB = Math.abs(etaDateB.getTime() - now.getTime());
-
-    return timeDifferenceA - timeDifferenceB;
-  });
+  // Search for the SKU
+  const matchingResults = excelData.filter(row => row.SKU.replace(/\//g, '') === skuInput.replace(/\//g, ''));
 
   // Display the results
-  if (matchingResults.length > 0) {
-    resultsContainer.innerHTML = '<h3>Search Results:</h3>';
-    matchingResults.forEach(result => {
-      const etaDate = new Date(result[2]);
-      const now = new Date();
-      const timeDifference = etaDate.getTime() - now.getTime();
-      const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+  displayResults(matchingResults);
+}
 
-      const documentNumber = result[4];
-      const documentLink = `https://priis.cms1.co.il/priority/openmail.htm?priority:priform@DOCUMENTS_P:${documentNumber}:cms:tabula.ini:1`;
+// Function to display search results
+function displayResults(results) {
+  const resultContainer = document.getElementById("resultContainer");
+  resultContainer.innerHTML = ""; // Clear previous results
 
-      let gapIllustration = "";
-
-      // Adjust gap illustration based on the time difference
-      if (daysDifference > 30) {
-        gapIllustration = "✈️✈️✈️"; // Far gap (red)
-      } else if (daysDifference > 15) {
-        gapIllustration = "✈️✈️"; // Medium gap (yellow)
-      } else {
-        gapIllustration = "✈️"; // Close gap (green)
-      }
-
-      resultsContainer.innerHTML += `
-        <p>SKU: ${result[0]}</p>
-        <p>Description: ${result[1]}</p>
-        <p>ETA: ${result[2]}</p>
-        <p>ATA: ${result[3]}</p>
-        <p>Shipment Progress: ${gapIllustration}</p>
-        <p><a href="${documentLink}" target="_blank">${documentNumber}</a></p>
-        <hr>`;
-    });
+  if (results.length === 0) {
+    resultContainer.innerHTML = "<p>No results found.</p>";
   } else {
-    resultsContainer.innerHTML = "<p>No results found.</p>";
+    results.forEach(result => {
+      const resultItem = document.createElement("div");
+      resultItem.innerHTML = `<p>SKU: ${result.SKU}</p>
+                              <p>Description: ${result.Description}</p>
+                              <p>ETA: ${result.ETA}</p>
+                              <p>Document#: ${result["Document#"]}</p>`;
+      resultContainer.appendChild(resultItem);
+    });
   }
 }
