@@ -2,37 +2,31 @@
 function searchProduct() {
   const skuInput = document.getElementById("skuInput").value.toUpperCase();
 
-  // Parse the JSON data
-  const jsonData = {
-    "Sheet1": [
-      {
-        "SKU": "3EH03550AA",
-        "Description": "1 Universal Telephony License additional for exi",
-        "ETA": "11/2/20",
-        "ATA": "11/2/20",
-        "Document#": "GR20007923"
-      },
-      // ... (rest of your JSON data)
-    ]
-  };
+  // Fetch the data from the database.json file
+  fetch('./database.json')
+    .then(response => response.json())
+    .then(jsonData => {
+      // Extract the array from the parsed JSON
+      const excelData = jsonData.Sheet1;
 
-  // Extract the array from the parsed JSON
-  const excelData = jsonData.Sheet1;
+      // Check if SKU and skuInput are defined
+      if (!skuInput || typeof skuInput !== 'string') {
+        console.error("Invalid SKU input");
+        return;
+      }
 
-  // Check if SKU and skuInput are defined
-  if (!skuInput || typeof skuInput !== 'string') {
-    console.error("Invalid SKU input");
-    return;
-  }
+      // Search for the SKU
+      const matchingResults = excelData.filter(row => {
+        const rowSKU = row.SKU && typeof row.SKU === 'string' ? row.SKU.replace(/\//g, '') : '';
+        return rowSKU === skuInput.replace(/\//g, '');
+      });
 
-  // Search for the SKU
-  const matchingResults = excelData.filter(row => {
-    const rowSKU = row.SKU && typeof row.SKU === 'string' ? row.SKU.replace(/\//g, '') : '';
-    return rowSKU === skuInput.replace(/\//g, '');
-  });
-
-  // Display the results
-  displayResults(matchingResults);
+      // Display the results
+      displayResults(matchingResults);
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+    });
 }
 
 // Function to display search results
