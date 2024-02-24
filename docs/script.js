@@ -29,7 +29,7 @@ function searchProduct() {
   }
 
   // Search the fetched data
-  const matchingResults = excelData.filter(row => row[0] === skuInput);
+  const matchingResults = excelData.filter(row => row[0].replace(/\//g, '') === skuInput.replace(/\//g, ''));
 
   // Sort results based on ETA proximity to current date
   matchingResults.sort((a, b) => {
