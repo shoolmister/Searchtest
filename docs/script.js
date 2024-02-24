@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function searchProduct() {
         const searchTerm = searchInput.value.toUpperCase();
 
-        fetch("docs/database.json")
+        fetch("https://raw.githubusercontent.com/shoolmister/Searchtest/main/database.json")
             .then(response => response.json())
             .then(data => {
                 const products = data.Sheet1;
