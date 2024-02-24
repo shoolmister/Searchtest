@@ -6,21 +6,24 @@ document.addEventListener("DOMContentLoaded", function () {
     searchButton.addEventListener("click", searchProduct);
 
     function searchProduct() {
-        const searchTerm = searchInput.value.toUpperCase();
+    const searchTerm = searchInput.value.toUpperCase();
 
-        fetch("https://raw.githubusercontent.com/shoolmister/Searchtest/main/database.json")
-            .then(response => response.json())
-            .then(data => {
-                const products = data.Sheet1;
-                const results = products.filter(product => product.SKU.toUpperCase() === searchTerm);
+    fetch("https://raw.githubusercontent.com/shoolmister/Searchtest/main/database.json", {
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            const products = data.Sheet1;
+            const results = products.filter(product => product.SKU.toUpperCase() === searchTerm);
 
-                displayResults(results);
-            })
-            .catch(error => {
-                console.error("Error fetching data:", error);
-            });
-    }
-
+            displayResults(results);
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+        });
+}
     function displayResults(results) {
         resultContainer.innerHTML = "";
 
