@@ -1,39 +1,46 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Load the database.json file
-  fetch('database.json')
-    .then(response => response.json())
-    .then(data => {
-      const searchInput = document.getElementById('searchInput');
-      const searchButton = document.getElementById('searchButton');
-      const resultsContainer = document.getElementById('resultsContainer');
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+    const resultContainer = document.getElementById("resultContainer");
 
-      searchButton.addEventListener('click', function () {
-        const searchTerm = searchInput.value.trim().toUpperCase();
+    searchButton.addEventListener("click", searchProduct);
 
-        // Filter data based on SKU
-        const results = data.Sheet1.filter(item => item.SKU === searchTerm);
+    function searchProduct() {
+        const searchTerm = searchInput.value.toUpperCase();
 
-        // Display results
-        displayResults(results);
-      });
+        fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/database.json")
+            .then(response => response.json())
+            .then(data => {
+                const products = data.Sheet1;
+                const results = products.filter(product => product.SKU.toUpperCase() === searchTerm);
 
-      function displayResults(results) {
-        resultsContainer.innerHTML = '';
+                displayResults(results);
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+    }
+
+    function displayResults(results) {
+        resultContainer.innerHTML = "";
 
         if (results.length === 0) {
-          resultsContainer.innerHTML = '<p>No results found.</p>';
-        } else {
-          const resultList = document.createElement('ul');
-
-          results.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `SKU: ${item.SKU}, Description: ${item.Description}, ETA: ${item.ETA}, ATA: ${item.ATA}, Document#: ${item['Document#']}`;
-            resultList.appendChild(listItem);
-          });
-
-          resultsContainer.appendChild(resultList);
+            resultContainer.innerHTML = "Product not found";
+            return;
         }
-      }
-    })
-    .catch(error => console.error('Error loading database.json:', error));
+
+        const resultHTML = results.map(result => {
+            return `
+                <div>
+                    <p>SKU: ${result.SKU}</p>
+                    <p>Description: ${result.Description}</p>
+                    <p>ETA: ${result.ETA}</p>
+                    <p>ATA: ${result.ATA || "N/A"}</p>
+                    <p>Document#: ${result["Document#"]}</p>
+                </div>
+            `;
+        }).join("");
+
+        resultContainer.innerHTML = resultHTML;
+    }
 });
