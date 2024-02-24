@@ -3,15 +3,15 @@
     {
       "SKU": "3EH03550AA",
       "Description": "1 Universal Telephony License additional for exi",
-      "ETA": "11/3/24",
-      "ATA": "",
+      "ETA": "11/2/20",
+      "ATA": "11/2/20",
       "Document#": "GR20007923"
     },
     {
       "SKU": "3EY98998AA",
       "Description": "OXO Connect software assurance for 3 years",
       "ETA": "11/2/25",
-      "ATA": "",
+      "ATA": "11/2/20",
       "Document#": "GR20007923"
     },
     {
@@ -35,11 +35,81 @@
       "Document#": "GR22000420"
     },
     {
-      "SKU": "SFP-10G-T",
-      "Description": "copper transceiver SFP+). 10GBase-T 10 Gigabit e",
-      "ETA": "6/1/23",
-      "ATA": "6/1/23",
-      "Document#": "GR23003871"
+      "SKU": "3MG27106AC",
+      "Description": "PREMIUM ADD-ON MODULE S - 40 KEYS",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
+    },
+    {
+      "SKU": "3MG27201AB",
+      "Description": "8018 MOON GREY DESKPHONE W/O RJ45 CABLE",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
+    },
+    {
+      "SKU": "3EH02146AA",
+      "Description": "OXO CONNECT SMALL R4",
+      "ETA": "1/12/22",
+      "ATA": "1/12/22",
+      "Document#": "GR22000420"
+    },
+    {
+      "SKU": "OS6865-BP-D",
+      "Description": "OS6865 180W DC PSU",
+      "ETA": "3/20/22",
+      "ATA": "3/20/22",
+      "Document#": "GR22002081"
+    },
+    {
+      "SKU": "OS6360-P10-IS",
+      "Description": "Value 10p PoE Gig - IS cord",
+      "ETA": "4/27/22",
+      "ATA": "4/27/22",
+      "Document#": "GR22003025"
+    },
+    {
+      "SKU": "PP3N-OS6900",
+      "Description": "3YR Partner SUPPORT Plus for all OS6900 models",
+      "ETA": "6/19/22",
+      "ATA": "6/19/22",
+      "Document#": "GR22004169"
+    },
+    {
+      "SKU": "PW3N-OS6450-10",
+      "Description": "3YR PARTNER SUPPORT SW OS6450-10",
+      "ETA": "8/30/22",
+      "ATA": "8/30/22",
+      "Document#": "GR22004167"
+    },
+    {
+      "SKU": "3EH73092AB",
+      "Description": "ANALOG INTERFACES SLI16-2 BOARD",
+      "ETA": "9/13/22",
+      "ATA": "9/13/22",
+      "Document#": "GR22006349"
+    },
+    {
+      "SKU": "LT-RD33-14883",
+      "Description": "Latitude 5440/i5-1335U/16GB/512GB/FHD/W11P/3Y NBD",
+      "Document#": "GR24001488",
+      "Order#": "1001920721",
+      "Amount": "10"
+    },
+    {
+      "SKU": "LT-RD33-14884",
+      "Description": "Latitude 5440/i7-1355U/16GB/512GB/FHD/W11P/3Y NBD",
+      "Document#": "GR24001488",
+      "Order#": "1001920721",
+      "Amount": "5"
+    },
+    {
+      "SKU": "LT-RD33-14887",
+      "Description": "Latitude 5440/i7-1335U/64GB/1TB/FHD/W11P/3Y NBD",
+      "Document#": "GR24001488",
+      "Order#": "1001920721",
+      "Amount": "2"
     }
   ]
 }
