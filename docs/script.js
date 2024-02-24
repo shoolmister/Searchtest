@@ -19,8 +19,17 @@ function searchProduct() {
   // Extract the array from the parsed JSON
   const excelData = jsonData.Sheet1;
 
+  // Check if SKU and skuInput are defined
+  if (!skuInput || typeof skuInput !== 'string') {
+    console.error("Invalid SKU input");
+    return;
+  }
+
   // Search for the SKU
-  const matchingResults = excelData.filter(row => row.SKU.replace(/\//g, '') === skuInput.replace(/\//g, ''));
+  const matchingResults = excelData.filter(row => {
+    const rowSKU = row.SKU && typeof row.SKU === 'string' ? row.SKU.replace(/\//g, '') : '';
+    return rowSKU === skuInput.replace(/\//g, '');
+  });
 
   // Display the results
   displayResults(matchingResults);
