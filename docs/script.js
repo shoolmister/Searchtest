@@ -1,52 +1,55 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("searchInput");
-    const searchButton = document.getElementById("searchButton");
-    const resultContainer = document.getElementById("resultContainer");
+// Function to search for a product by SKU
+function searchProduct() {
+  const skuInput = document.getElementById("skuInput").value.toUpperCase();
 
-    searchButton.addEventListener("click", searchProduct);
+  // Parse the JSON data
+  const jsonData = {
+    "Sheet1": [
+      {
+        "SKU": "3EH03550AA",
+        "Description": "1 Universal Telephony License additional for exi",
+        "ETA": "11/2/20",
+        "ATA": "11/2/20",
+        "Document#": "GR20007923"
+      },
+      // ... (rest of your JSON data)
+    ]
+  };
 
-    function searchProduct() {
-        const searchTerm = searchInput.value.toUpperCase();
+  // Extract the array from the parsed JSON
+  const excelData = jsonData.Sheet1;
 
-        fetch("https://raw.githubusercontent.com/shoolmister/Searchtest/main/database.json")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Network response was not ok: ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log("Data fetched successfully:", data);
-                const products = data.Sheet1;
-                const results = products.filter(product => product.SKU.toUpperCase() === searchTerm);
+  // Check if SKU and skuInput are defined
+  if (!skuInput || typeof skuInput !== 'string') {
+    console.error("Invalid SKU input");
+    return;
+  }
 
-                displayResults(results);
-            })
-            .catch(error => {
-                console.error("Error fetching data:", error);
-            });
-    }
+  // Search for the SKU
+  const matchingResults = excelData.filter(row => {
+    const rowSKU = row.SKU && typeof row.SKU === 'string' ? row.SKU.replace(/\//g, '') : '';
+    return rowSKU === skuInput.replace(/\//g, '');
+  });
 
-    function displayResults(results) {
-        resultContainer.innerHTML = "";
+  // Display the results
+  displayResults(matchingResults);
+}
 
-        if (results.length === 0) {
-            resultContainer.innerHTML = "Product not found";
-            return;
-        }
+// Function to display search results
+function displayResults(results) {
+  const resultContainer = document.getElementById("resultContainer");
+  resultContainer.innerHTML = ""; // Clear previous results
 
-        const resultHTML = results.map(result => {
-            return `
-                <div>
-                    <p>SKU: ${result.SKU}</p>
-                    <p>Description: ${result.Description}</p>
-                    <p>ETA: ${result.ETA}</p>
-                    <p>ATA: ${result.ATA || "N/A"}</p>
-                    <p>Document#: ${result["Document#"]}</p>
-                </div>
-            `;
-        }).join("");
-
-        resultContainer.innerHTML = resultHTML;
-    }
-});
+  if (results.length === 0) {
+    resultContainer.innerHTML = "<p>No results found.</p>";
+  } else {
+    results.forEach(result => {
+      const resultItem = document.createElement("div");
+      resultItem.innerHTML = `<p>SKU: ${result.SKU}</p>
+                              <p>Description: ${result.Description}</p>
+                              <p>ETA: ${result.ETA}</p>
+                              <p>Document#: ${result["Document#"]}</p>`;
+      resultContainer.appendChild(resultItem);
+    });
+  }
+}
